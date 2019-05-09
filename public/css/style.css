@@ -1,0 +1,76 @@
+body{
+    color: #000000;
+}
+.project-name{
+    background-color: #FBE5D6;  
+}
+.project-name h3{
+    line-height: 40px;
+    margin: 4px auto;
+    text-align: center;
+}
+.nav-menu{
+    background-color: #FFF2CC;
+}
+.nav-menu .nav-right{
+    margin-top: 5px;
+}
+.content h1{
+    margin: 1em 0;
+}
+.menu-left{
+    border-right: 1px solid gray;
+}
+.btn-search{
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+    background-color: #FFF2CC;
+}
+.btn-regrister{
+    background-color: #e2f0d9;
+    padding: 5px 30px !important;
+}
+.btn-edit, .btn-delete{
+    padding: 5px 15px !important;
+}
+.custom-select {
+   background: url(../images/down.png) no-repeat right #ffffff !important;
+}
+.form-search{
+    border-right: 1px solid gray;
+}
+.custom-table{
+    border-collapse: collapse;
+    margin-bottom: 3em !important;
+}
+.custom-table tr{
+    background-color: #fcfdee;
+    color: #000000;
+}
+.custom-table tr:nth-child(1), .custom-table tr:nth-child(2){
+    background-color: rgb(119, 116, 116);
+    color: #ffffff;
+}
+.custom-table tr:nth-child(3), .custom-table tr:nth-child(4){
+    background-color: #ffffff;
+}
+.custom-table tr th, .custom-table tr td{
+    text-align: center;
+    font-size: 13px;
+    line-height: 18px;
+}
+.custom-table tr th:last-child, .custom-table tr td:nth-child(2){
+    width: 120px;
+}
+.custom-table, tr, th, td {
+    border: 1px solid black;
+}
+.custom-table tr td button, .custom-table tr td p, .custom-table tr th p{
+    margin-top: 20px;
+}
+input[type=text], input[type=email], input[type=date]{
+    width: 100%;
+}
+input[type=date]{
+    border: 1px solid #b3bcc5;
+}
