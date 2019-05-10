@@ -1,6 +1,9 @@
 body{
     color: #000000;
 }
+button:focus, input[type="text"], select, input[type="email"],input[type="date"]{
+    outline: none !important;
+}
 .project-name{
     background-color: #FBE5D6;  
 }
@@ -33,6 +36,9 @@ body{
 .btn-edit, .btn-delete{
     padding: 5px 15px !important;
 }
+.btn-delete,.btn-edit, .btn-regrister, .btn-search{
+    border: 1px solid #b3bcc5 !important;
+}
 .custom-select {
    background: url(../images/down.png) no-repeat right #ffffff !important;
 }
@@ -47,11 +53,11 @@ body{
     background-color: #fcfdee;
     color: #000000;
 }
-.custom-table tr:nth-child(1), .custom-table tr:nth-child(2){
+.custom-table  > thead > tr > th{
     background-color: rgb(119, 116, 116);
     color: #ffffff;
 }
-.custom-table tr:nth-child(3), .custom-table tr:nth-child(4){
+.custom-table  > tbody > tr:nth-child(1), .custom-table  > tbody > tr:nth-child(2){
     background-color: #ffffff;
 }
 .custom-table tr th, .custom-table tr td{
@@ -59,13 +65,10 @@ body{
     font-size: 13px;
     line-height: 18px;
 }
-.custom-table tr th:last-child, .custom-table tr td:nth-child(2){
-    width: 120px;
-}
 .custom-table, tr, th, td {
     border: 1px solid black;
 }
-.custom-table tr td button, .custom-table tr td p, .custom-table tr th p{
+.custom-table tr td button{
     margin-top: 20px;
 }
 input[type=text], input[type=email], input[type=date]{
@@ -73,4 +76,14 @@ input[type=text], input[type=email], input[type=date]{
 }
 input[type=date]{
     border: 1px solid #b3bcc5;
+}
+.custom-table .th-phone{
+    width: 12%;
+}
+.custom-table .th-status{
+    width: 15%;
+}
+.custom-table  > thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 1px solid#000000;
 }

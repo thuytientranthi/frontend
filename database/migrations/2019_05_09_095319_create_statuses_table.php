@@ -21,15 +21,21 @@ class CreateStatusesTable extends Migration
         DB::table('statuses')->insert([
             [       
                 'id' => 1,
-                'name' => 'Chờ xử lý'
+                'name' => 'Chờ xử lý',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ],
             [       
                 'id' => 2,
-                'name' => 'Hoạt động'
+                'name' => 'Hoạt động',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ],
             [       
                 'id' => 3,
-                'name' => 'Chặn'
+                'name' => 'Chặn',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s')
             ],    
         ]);
         // \DB::statement('ALTER SEQUENCE statuses_id_seq RESTART WITH 4');

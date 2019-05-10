@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resource('member', 'Api\MemberController');
+Route::resource('status', 'Api\StatusController', ['except' => ['create', 'edit', 'show', 'update', 'detroy']]);
