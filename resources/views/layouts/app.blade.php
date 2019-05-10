@@ -4,7 +4,7 @@
         @include('layouts.head')
     </head>
     <body>
-        <div class="container">
+        <div class="container" id="app">
             <div class="row">
                 @include('layouts.nav')
             </div>
@@ -17,5 +17,6 @@
                 </div>
             </div>
         </div>
+        @include('layouts.foot')
     </body>
 </html>
