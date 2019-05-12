@@ -183,6 +183,9 @@
     .custom-table  > thead > tr > th{
         background-color: rgb(119, 116, 116);
         color: #ffffff;
+        vertical-align: inherit;
+        border-bottom: 1px solid#000000;
+        border-top: 1px solid#000000;
     }
     .custom-table  > tbody > tr:nth-child(1), .custom-table  > tbody > tr:nth-child(2){
         background-color: #ffffff;
@@ -242,10 +245,5 @@
     }
     .custom-table .th-status{
         width: 15%;
-    }
-    .custom-table  > thead > tr > th {
-        vertical-align: bottom;
-        border-bottom: 1px solid#000000;
-        border-top: 1px solid#000000;
     }
 </style>

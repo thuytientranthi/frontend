@@ -52,4 +52,9 @@
     .col-md-6 input, .col-md-6 select, .btn-search{
         width : 130%;
     }
+    input:focus, select:focus, select option:focus, button:focus{
+        outline: none !important;
+        border: 1px solid #ced4da;
+        box-shadow: none !important;
+    }
 </style>
