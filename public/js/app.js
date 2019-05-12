@@ -1838,6 +1838,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -1851,6 +1853,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -1978,11 +1982,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      isHidden: true
+      seen: true,
+      members: [],
+      errors: []
     };
+  },
+  mounted: function mounted() {
+    var app = this;
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:8000/api/members').then(function (resp) {
+      console.log(resp.data);
+
+      if (resp.data.data == false) {
+        app.errors = resp.data.error.message;
+      }
+
+      if (resp.data.error.status == false) {
+        app.members = resp.data.data;
+      }
+    })["catch"](function (resp) {
+      console.log(resp);
+      alert("Could not load posts");
+    });
+  },
+  method: {
+    select: function select(event) {
+      targetId = event.currentTarget.id;
+      console.log(targetId); // returns 'foo'
+    }
   }
 });
 
@@ -6445,7 +6479,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".page-link[data-v-ada14540] {\n  border: 1px solid #b1afaf;\n  background-color: #ebd79e !important;\n}", ""]);
+exports.push([module.i, ".page-link[data-v-ada14540] {\n  border: 1px solid #b1afaf;\n  background-color: #ebd79e !important;\n}\n.pageinate[data-v-ada14540] {\n  margin-top: 3%;\n}", ""]);
 
 // exports
 
@@ -6464,7 +6498,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".btn-search[data-v-bf5001b8] {\n  padding-left: 30px !important;\n  padding-right: 30px !important;\n  background-color: #ebd79e !important;\n  border: 1px solid #b1afaf;\n}", ""]);
+exports.push([module.i, ".btn-search[data-v-bf5001b8] {\n  background-color: #ebd79e !important;\n  border: 1px solid #b1afaf;\n}\n.col-md-6 input[data-v-bf5001b8], .col-md-6 select[data-v-bf5001b8], .btn-search[data-v-bf5001b8] {\n  width: 130%;\n}", ""]);
 
 // exports
 
@@ -6483,7 +6517,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".btn-regrister[data-v-c91faba0] {\n  background-color: #e2f0d9;\n  padding: 5px 30px !important;\n}", ""]);
+exports.push([module.i, ".btn-regrister[data-v-c91faba0] {\n  background-color: #e2f0d9;\n  padding: 5px 30px !important;\n}\n.custom-table[data-v-c91faba0] {\n  margin: 10px;\n}\n.custom-table tr[data-v-c91faba0] {\n  background-color: #fcfdee;\n  color: #000000;\n}\n.custom-table td[data-v-c91faba0] {\n  padding: 0px;\n}\n.custom-table > thead > tr > th[data-v-c91faba0] {\n  background-color: #777474;\n  color: #ffffff;\n}\n.custom-table > tbody > tr[data-v-c91faba0]:nth-child(1), .custom-table > tbody > tr[data-v-c91faba0]:nth-child(2) {\n  background-color: #ffffff;\n}\n.custom-table tr th[data-v-c91faba0], .custom-table tr td[data-v-c91faba0] {\n  text-align: center;\n  font-size: 13px;\n}\n.custom-table tr td[data-v-c91faba0] {\n  line-height: 35px;\n}\n.custom-table[data-v-c91faba0], tr[data-v-c91faba0], th[data-v-c91faba0], td[data-v-c91faba0] {\n  border: 1px solid black;\n}\n.custom-table tr td button[data-v-c91faba0] {\n  margin-top: 20px;\n  font-size: 13px;\n}\ninput[type=text][data-v-c91faba0], input[type=email][data-v-c91faba0], input[type=date][data-v-c91faba0] {\n  width: 100%;\n  line-height: 35px;\n  text-align: center;\n  border: none;\n}\ninput[type=radio][data-v-c91faba0]:after {\n  width: 15px;\n  height: 15px;\n  border-radius: 15px;\n  top: -6px;\n  left: -1px;\n  position: relative;\n  background-color: #d1d3d1;\n  content: \"\";\n  display: inline-block;\n  visibility: visible;\n  border: 2px solid white;\n}\ninput[type=radio][data-v-c91faba0]:checked:after {\n  width: 15px;\n  height: 15px;\n  border-radius: 15px;\n  top: -6px;\n  left: -1px;\n  position: relative;\n  background-color: #ffa500;\n  content: \"\";\n  display: inline-block;\n  visibility: visible;\n  border: 2px solid white;\n}\n.custom-table tr td .custom-select[data-v-c91faba0] {\n  font-size: 13px;\n  border: none;\n}\n.custom-table .th-phone[data-v-c91faba0] {\n  width: 12%;\n}\n.custom-table .th-status[data-v-c91faba0] {\n  width: 15%;\n}\n.custom-table > thead > tr > th[data-v-c91faba0] {\n  vertical-align: bottom;\n  border-bottom: 1px solid #000000;\n  border-top: 1px solid #000000;\n}", ""]);
 
 // exports
 
@@ -38037,7 +38071,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6" }, [
+    return _c("div", { staticClass: "col-md-6 pageinate" }, [
       _c("form", { staticClass: "form-inline", attrs: { action: "" } }, [
         _c("div", { staticClass: "col-md-6" }, [
           _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
@@ -38113,16 +38147,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-6 form-search" }, [
-      _c("form", [
-        _c("div", { staticClass: "form-group row col-md-6" }, [
-          _c(
-            "label",
-            {
-              staticClass: "col-md-3 col-form-label",
-              attrs: { for: "staticEmail" }
-            },
-            [_vm._v("Tên user")]
-          ),
+      _c("div", { staticClass: "form-inline" }, [
+        _c("div", { staticClass: "form-group form-inline col-md-6" }, [
+          _c("label", { staticClass: "col-md-3 col-form-label" }, [
+            _vm._v("Tên user")
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-md-9" }, [
             _c("input", {
@@ -38132,15 +38161,10 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group row col-md-6" }, [
-          _c(
-            "label",
-            {
-              staticClass: "col-md-3 col-form-label",
-              attrs: { for: "inputPassword" }
-            },
-            [_vm._v("Trạng thái")]
-          ),
+        _c("div", { staticClass: "form-group form-inline col-md-6" }, [
+          _c("label", { staticClass: "col-md-3 col-form-label" }, [
+            _vm._v("Trạng thái")
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-md-9" }, [
             _c("select", { staticClass: "custom-select" }, [
@@ -38156,31 +38180,25 @@ var staticRenderFns = [
               _c("option", { attrs: { value: "2" } }, [_vm._v("Chặn")])
             ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group row col-md-6" }, [
-          _c(
-            "label",
-            {
-              staticClass: "col-md-3 col-form-label",
-              attrs: { for: "inputPassword" }
-            },
-            [_vm._v("Mail")]
-          ),
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-inline" }, [
+        _c("div", { staticClass: "form-group form-inline col-md-6" }, [
+          _c("label", { staticClass: "col-md-3 col-form-label" }, [
+            _vm._v("Mail")
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-md-9" }, [
             _c("input", {
               staticClass: "form-control",
-              attrs: { type: "text", id: "inputPassword" }
+              attrs: { type: "email" }
             })
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group row col-md-6" }, [
-          _c("label", {
-            staticClass: "col-md-3 col-form-label",
-            attrs: { for: "inputPassword" }
-          }),
+        _c("div", { staticClass: "form-group form-inline col-md-6" }, [
+          _c("label", { staticClass: "col-md-3 col-form-label" }),
           _vm._v(" "),
           _c("div", { staticClass: "col-md-9" }, [
             _c(
@@ -38216,77 +38234,160 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row" }, [
+    _vm.errors.length
+      ? _c("p", [
+          _c("b", { staticClass: "text-danger" }, [_vm._v(_vm._s(_vm.errors))])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
     _c("table", { staticClass: "custom-table table" }, [
       _vm._m(0),
       _vm._v(" "),
-      _c("tbody", [
-        _vm._m(1),
-        _vm._v(" "),
-        _vm._m(2),
-        _vm._v(" "),
-        _c("tr", [
-          _c("td", { attrs: { rowspan: "2" } }, [_vm._v("1")]),
+      _c(
+        "tbody",
+        [
+          _vm._m(1),
           _vm._v(" "),
-          _c("td", { attrs: { colspan: "4" } }, [
-            _vm._v("\n                    ádasdasdas\n                ")
-          ]),
+          _vm._m(2),
           _vm._v(" "),
-          _c("td", { attrs: { colspan: "8" } }, [
-            _vm._v("\n                    ádasdasd\n                ")
-          ]),
-          _vm._v(" "),
-          _c("td", { attrs: { colspan: "4" } }, [
-            _vm._v("\n                    sdasdasd\n                ")
-          ]),
-          _vm._v(" "),
-          _c("td", { attrs: { rowspan: "2" } }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-warning btn-edit",
-                on: {
-                  click: function($event) {
-                    _vm.isHidden = !_vm.isHidden
-                  }
-                }
-              },
-              [_vm._v("Sửa")]
-            ),
-            _vm._v(" "),
-            _c("button", { staticClass: "btn btn-danger btn-delete" }, [
-              _vm._v("Xóa")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _vm._m(3),
-        _vm._v(" "),
-        !_vm.isHidden
-          ? _c("tr", [
-              _c("td", { attrs: { rowspan: "2" } }, [_vm._v("1")]),
+          _vm._l(_vm.members, function(member, index) {
+            return [
+              _vm.seen
+                ? _c("tr", [
+                    _c("td", { attrs: { rowspan: "2" } }, [
+                      _vm._v(_vm._s(index + 1))
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { attrs: { colspan: "4" } }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(member.name) +
+                          "\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { attrs: { colspan: "8" } }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(member.email) +
+                          "\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { attrs: { colspan: "4" } }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(member.phone) +
+                          "\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { attrs: { rowspan: "2" } }, [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-warning btn-edit",
+                          on: {
+                            click: function($event) {
+                              _vm.seen = !_vm.seen
+                            }
+                          }
+                        },
+                        [_vm._v("Sửa")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        { staticClass: "btn btn-danger btn-delete" },
+                        [_vm._v("Xóa")]
+                      )
+                    ])
+                  ])
+                : _vm._e(),
               _vm._v(" "),
-              _vm._m(4),
+              _vm.seen
+                ? _c("tr", [
+                    _c("td", { attrs: { colspan: "1" } }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(member.birthday) +
+                          "\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { attrs: { colspan: "2" } }, [
+                      _vm._v(
+                        " " + _vm._s(member.gender) + "\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { attrs: { colspan: "2" } }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(member.address) +
+                          "\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { attrs: { colspan: "8" } }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(member.status) +
+                          "\n                    "
+                      )
+                    ])
+                  ])
+                : _vm._e(),
               _vm._v(" "),
-              _vm._m(5),
+              !_vm.seen
+                ? _c("tr", [
+                    _c("td", { attrs: { rowspan: "2" } }, [_vm._v("1")]),
+                    _vm._v(" "),
+                    _vm._m(3, true),
+                    _vm._v(" "),
+                    _vm._m(4, true),
+                    _vm._v(" "),
+                    _vm._m(5, true),
+                    _vm._v(" "),
+                    _c("td", { attrs: { rowspan: "2" } }, [
+                      _c(
+                        "button",
+                        { staticClass: "btn btn-primary btn-save" },
+                        [_vm._v("Lưu")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-danger btn-cancel",
+                          on: {
+                            click: function($event) {
+                              _vm.seen = !_vm.seen
+                            }
+                          }
+                        },
+                        [_vm._v("Cancel")]
+                      )
+                    ])
+                  ])
+                : _vm._e(),
               _vm._v(" "),
-              _vm._m(6),
-              _vm._v(" "),
-              _vm._m(7)
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        !_vm.isHidden
-          ? _c("tr", [
-              _vm._m(8),
-              _vm._v(" "),
-              _vm._m(9),
-              _vm._v(" "),
-              _vm._m(10),
-              _vm._v(" "),
-              _vm._m(11)
-            ])
-          : _vm._e()
-      ])
+              !_vm.seen
+                ? _c("tr", [
+                    _vm._m(6, true),
+                    _vm._v(" "),
+                    _vm._m(7, true),
+                    _vm._v(" "),
+                    _vm._m(8, true),
+                    _vm._v(" "),
+                    _vm._m(9, true)
+                  ])
+                : _vm._e()
+            ]
+          })
+        ],
+        2
+      )
     ])
   ])
 }
@@ -38422,26 +38523,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", { attrs: { colspan: "1" } }, [
-        _vm._v("\n                    sadasd\n                ")
-      ]),
-      _vm._v(" "),
-      _c("td", { attrs: { colspan: "2" } }, [_vm._v("Nam\n                ")]),
-      _vm._v(" "),
-      _c("td", { attrs: { colspan: "2" } }, [
-        _vm._v("\n                    dsfsdfsdfsdf\n                ")
-      ]),
-      _vm._v(" "),
-      _c("td", { attrs: { colspan: "8" } }, [
-        _vm._v("\n                    Hoatdsf\n                ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("td", { attrs: { colspan: "4" } }, [
       _c("input", {
         attrs: {
@@ -38481,20 +38562,6 @@ var staticRenderFns = [
           placeholder: "Nhập số điện thoại"
         }
       })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", { attrs: { rowspan: "2" } }, [
-      _c("button", { staticClass: "btn btn-primary btn-save" }, [
-        _vm._v("Lưu")
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-danger btn-cancel" }, [
-        _vm._v("Cancel")
-      ])
     ])
   },
   function() {
@@ -50714,7 +50781,9 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); // import Vue from 'vue';
+// import axios from 'axios';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -50727,8 +50796,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 // Vue.component('index-component', require('./components/members/IndexComponent.vue').default);
 
 Vue.component('table-component', __webpack_require__(/*! ./components/members/TableComponent.vue */ "./resources/js/components/members/TableComponent.vue")["default"]);
-Vue.component('pageinate-component', __webpack_require__(/*! ./components/members/PageinateComponent.vue */ "./resources/js/components/members/PageinateComponent.vue")["default"]);
 Vue.component('search-component', __webpack_require__(/*! ./components/members/SearchComponent.vue */ "./resources/js/components/members/SearchComponent.vue")["default"]);
+Vue.component('pageinate-component', __webpack_require__(/*! ./components/members/PageinateComponent.vue */ "./resources/js/components/members/PageinateComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -50977,14 +51046,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!************************************************************!*\
   !*** ./resources/js/components/members/TableComponent.vue ***!
   \************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TableComponent_vue_vue_type_template_id_c91faba0_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TableComponent.vue?vue&type=template&id=c91faba0&scoped=true& */ "./resources/js/components/members/TableComponent.vue?vue&type=template&id=c91faba0&scoped=true&");
 /* harmony import */ var _TableComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TableComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/members/TableComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _TableComponent_vue_vue_type_style_index_0_id_c91faba0_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TableComponent.vue?vue&type=style&index=0&id=c91faba0&lang=scss&scoped=true& */ "./resources/js/components/members/TableComponent.vue?vue&type=style&index=0&id=c91faba0&lang=scss&scoped=true&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _TableComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _TableComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _TableComponent_vue_vue_type_style_index_0_id_c91faba0_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TableComponent.vue?vue&type=style&index=0&id=c91faba0&lang=scss&scoped=true& */ "./resources/js/components/members/TableComponent.vue?vue&type=style&index=0&id=c91faba0&lang=scss&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -51016,7 +51086,7 @@ component.options.__file = "resources/js/components/members/TableComponent.vue"
 /*!*************************************************************************************!*\
   !*** ./resources/js/components/members/TableComponent.vue?vue&type=script&lang=js& ***!
   \*************************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51078,8 +51148,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\frontend\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\frontend\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! F:\VueJs\frontend\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! F:\VueJs\frontend\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

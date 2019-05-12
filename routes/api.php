@@ -17,5 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('member', 'Api\MemberController');
-Route::resource('status', 'Api\StatusController', ['except' => ['create', 'edit', 'show', 'update', 'detroy']]);
+Route::resource('members', 'Api\MemberController');
+Route::resource('statuses', 'Api\StatusController', ['except' => ['create', 'edit', 'show', 'update', 'detroy']]);

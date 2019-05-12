@@ -3,7 +3,7 @@
     @include('layouts.admin-menu')
 @endsection
 @section('content')
-    <h1>QL User</h1>
+    <h3>QL User</h3>
     <div class="row">
         <search-component></search-component>
         <pageinate-component></pageinate-component>

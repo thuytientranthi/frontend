@@ -8,6 +8,9 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+// import Vue from 'vue';
+// import axios from 'axios';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -21,8 +24,8 @@ window.Vue = require('vue');
 
 // Vue.component('index-component', require('./components/members/IndexComponent.vue').default);
 Vue.component('table-component', require('./components/members/TableComponent.vue').default);
-Vue.component('pageinate-component', require('./components/members/PageinateComponent.vue').default);
 Vue.component('search-component', require('./components/members/SearchComponent.vue').default);
+Vue.component('pageinate-component', require('./components/members/PageinateComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

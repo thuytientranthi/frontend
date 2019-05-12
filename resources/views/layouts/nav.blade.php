@@ -1,7 +1,7 @@
-<div class="col-md-3 sidenav project-name">
-    <h3>Frontend in two weeks<h3>
+<div class="col-md-2 sidenav project-name">
+    <p>Frontend in two weeks<p>
 </div>
-<div class="col-md-9 nav-menu">
+<div class="col-md-10 nav-menu">
     <ul class="nav justify-content-end nav-right">
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">ThuanLV</a>

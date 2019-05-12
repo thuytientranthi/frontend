@@ -5,14 +5,14 @@
     </head>
     <body>
         <div class="container" id="app">
-            <div class="row">
+            <header class="row">
                 @include('layouts.nav')
-            </div>
+            </header>
             <div class="row content">
-                <div class="col-md-3 sidenav menu-left">
+                <div class="col-md-2 sidenav menu-left">
                     @yield('menu-left')
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-10">
                     @yield('content')
                 </div>
             </div>

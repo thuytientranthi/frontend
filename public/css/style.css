@@ -1,13 +1,18 @@
 body{
     color: #000000;
 }
-button:focus, input[type="text"], select, input[type="email"],input[type="date"]{
-    outline: none !important;
+button:focus, input[type="text"]:focus, select:focus, input[type="email"]:focus, input[type="date"]:focus{
+    border-color: rgba(126, 239, 104, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+    outline: 0 none;
+}
+input[type="radio"]{
+    margin: 12% 0;
 }
 .project-name{
     background-color: #FBE5D6;  
 }
-.project-name h3{
+.project-name p{
     line-height: 40px;
     margin: 4px auto;
     text-align: center;
@@ -18,17 +23,17 @@ button:focus, input[type="text"], select, input[type="email"],input[type="date"]
 .nav-menu .nav-right{
     margin-top: 5px;
 }
-.content h1{
-    margin: 1em 0;
+.content h3{
+    margin: 10px 0;
 }
 .menu-left{
     border-right: 1px solid gray;
 }
-.btn-search{
+/* .btn-search{
     padding-left: 30px !important;
     padding-right: 30px !important;
     background-color: #FFF2CC;
-}
+} */
 .btn-edit, .btn-delete, .btn-save{
     padding: 5px 15px !important;
 }
@@ -41,45 +46,6 @@ button:focus, input[type="text"], select, input[type="email"],input[type="date"]
 .form-search{
     border-right: 1px solid gray;
 }
-.custom-table{
-    border-collapse: collapse;
-    margin-bottom: 3em !important;
-}
-.custom-table tr{
-    background-color: #fcfdee;
-    color: #000000;
-}
-.custom-table  > thead > tr > th{
-    background-color: rgb(119, 116, 116);
-    color: #ffffff;
-}
-.custom-table  > tbody > tr:nth-child(1), .custom-table  > tbody > tr:nth-child(2){
-    background-color: #ffffff;
-}
-.custom-table tr th, .custom-table tr td{
-    text-align: center;
-    font-size: 13px;
-    line-height: 18px;
-}
-.custom-table, tr, th, td {
-    border: 1px solid black;
-}
-.custom-table tr td button{
-    margin-top: 20px;
-}
-input[type=text], input[type=email], input[type=date]{
-    width: 100%;
-}
-input[type=date]{
-    border: 1px solid #b3bcc5;
-}
-.custom-table .th-phone{
-    width: 12%;
-}
-.custom-table .th-status{
-    width: 15%;
-}
-.custom-table  > thead > tr > th {
-    vertical-align: bottom;
-    border-bottom: 1px solid#000000;
+.sidenav p {
+    margin-bottom: 0;
 }

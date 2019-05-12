@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-6">
+    <div class="col-md-6 pageinate">
         <form action="" class="form-inline">
             <div class="col-md-6">
                 <nav aria-label="Page navigation example">
@@ -34,4 +34,8 @@
         border: 1px solid #b1afaf;
         background-color: rgb(235, 215, 158) !important;
     }
+    .pageinate{
+        margin-top: 3%;
+    }
+
 </style>
