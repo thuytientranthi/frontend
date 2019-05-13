@@ -54,29 +54,32 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(),[
+        $rules = [
             'name'      => 'required|max:100',
-            'email'     => 'required|email|max:64',
-            'phone'     => 'required|max:11',
+            'email'     => 'required|email|max:64|unique:members,email',
+            'phone'     => 'required|max:11|unique:members,phone',
             'birthday'  => 'required|date',
             'gender'    => 'required',
             'address'   => 'required',
             'status'    => 'required',
-        ]);
-        $customMessages = [
+        ];
+        $messages = [
             'name.required'     => 'Vui lòng nhập tên user',
             'name.max'          => 'Vui lòng nhập dưới 100 ký tự',
             'email.required'    => 'Vui lòng nhập địa chỉ email',
+            'email.email'       => 'Vui lòng nhập đúng địa chỉ email',
             'email.max'         => 'Vui lòng nhập dưới 64 ký tự',
+            'email.unique'      => 'Email đã tồn tại',
             'phone.required'    => 'Vui lòng nhập số điện thoại',
             'phone.max'         => 'Vui lòng nhập dưới 11 ký tự',
+            'phone.unique'      => 'Số điện thoại đã sử dụng',
             'birthday.required' => 'Vui lòng nhập ngày sinh',
             'birthday.date'     => 'Vui lòng nhập đúng định dạng yyy\mm\dd',
             'gender.required'   => 'Vui lòng nhập giới tính',
             'address.required'  => 'Vui lòng nhập địa chỉ',
             'status.required'   => 'Vui lòng nhập trạng thái',
         ];
-        $this->validate($validator, $customMessages);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if($validator->fails()){
             return response()->json([
                 'data' => false,
@@ -97,28 +100,6 @@ class MemberController extends Controller
         }
 
         try {
-            $isPhone = Member::where('phone', $request->phone)->first();
-            $isEmail = Member::where('email', $request->email)->first();
-            if (!empty($isPhone)) {
-                return response()->json([
-                    'data' => false,
-                    'error' => [
-                        'message'   => "Số điện thoại đã sử dụng.",
-                        'status'    => true,
-                        'code'      => 402
-                    ]
-                ]);
-            }
-            if (!empty($isEmail)) {
-                return response()->json([
-                    'data' => false,
-                    'error' => [
-                        'message' => "Email đã sử dụng.",
-                        'status' => true,
-                        'code' => 402
-                    ]
-                ]);
-            }
             $member = new Member;
             $member->name = $request->name;
             $member->email = $request->email;
@@ -134,13 +115,13 @@ class MemberController extends Controller
                     'status'=> false
                 ]
             ]);
-        } catch (\Throwable $th) {
-            return response()-json([
+        } catch (\Exception $e) {
+            return response()->json([
                 'data' => false,
                 'error' => [
                     'message' => "Phát sinh lỗi trong quá trình sử lý",
                     'status' => true,
-                    'code' => 400
+                    'code' => 500
                 ]
             ]);
         }
@@ -188,6 +169,24 @@ class MemberController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $member = Member::find($id);
+            $member->delete();
+            return response()->json([
+                'data' => true,
+                'error' => [
+                    'status'=> false
+                ]
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'data' => false,
+                'error' => [
+                    'status'=> true,
+                    'code' => 400,
+                    "message" => "Phát sinh lỗi trong quá trình xử lý"
+                ]
+            ]);
+        }
     }
 }

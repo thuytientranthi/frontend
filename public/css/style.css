@@ -34,9 +34,6 @@ input[type="radio"]{
     padding-right: 30px !important;
     background-color: #FFF2CC;
 } */
-.btn-edit, .btn-delete, .btn-save{
-    padding: 5px 15px !important;
-}
 .btn-delete,.btn-edit, .btn-regrister{
     border: 1px solid #b3bcc5 !important;
 }

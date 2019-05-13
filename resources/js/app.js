@@ -4,12 +4,14 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+// require('./bootstrap');
 
 window.Vue = require('vue');
 
-// import Vue from 'vue';
-// import axios from 'axios';
+import Vue from 'vue';
+import VueSwal from 'vue-swal'
+ 
+Vue.use(VueSwal);
 
 /**
  * The following block of code may be used to automatically register your

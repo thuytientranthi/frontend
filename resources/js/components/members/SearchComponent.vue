@@ -44,10 +44,11 @@
 
 <style lang="scss" scoped>
     .btn-search{
-        // padding-left: 30px !important;
-        // padding-right: 30px !important;
-        background-color: rgb(235, 215, 158) !important;
-        border: 1px solid #b1afaf;
+        background-color: #FFF2CC !important;
+        border: 1px solid #ced4da;
+    }
+    .btn-search:hover{
+        background-color: #e8c561 !important;
     }
     .col-md-6 input, .col-md-6 select, .btn-search{
         width : 130%;
